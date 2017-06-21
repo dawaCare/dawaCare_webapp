@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Patients Dashboard</h1>
+  <a href="{% url 'patients-new' %}">Add a new Patient</a>
+
+  {% for patient in patients %}
+    <p>First Name: {{patient.first_name}}</p>
+    <p>Last Name: {{patient.last_name}}</p>
+    <p>Age: {{patient.age}}</p>
+    <p>Location: {{patient.location}}</p>
+    <p>Condition: {{patient.condition}}</p>
+    <p>Medication: {{patient.medication}}</p>
+    <p>Initial Visit: {{patient.initial_visit}}</p>
+  {% endfor %}
+</body>
+</html>

@@ -37,7 +37,7 @@ class Login(View):
 			user = authenticate(username=username, password=password)
 			if user is not None:
 				login(request, user)
-				return HttpResponseRedirect('/wall')
+				return HttpResponseRedirect('/dashboard')
 			else:
 				return render(request, 'users/login.html', context)
 		else:
